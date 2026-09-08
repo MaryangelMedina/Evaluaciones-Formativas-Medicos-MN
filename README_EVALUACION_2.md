@@ -1,6 +1,6 @@
 # Segunda Evaluación Formativa FUESMEN 2026
 
-Evaluación interactiva de las unidades 6, 7 y 8 del Curso de Metodología y Aplicación de Radioisótopos.
+Evaluación interactiva de las unidades 6, 7 y 8 del Curso de Metodología y Aplicación de Radioisótopos. Incluye cuatro ejercicios guiados de cálculo y 30 preguntas conceptuales.
 
 ## Archivos que se suben al mismo repositorio de GitHub
 
@@ -32,6 +32,7 @@ La segunda evaluación creará automáticamente:
 
 - `Resumen_Evaluacion_2`: una fila por intento, con resultados de las unidades 6, 7 y 8.
 - `Respuestas_Evaluacion_2`: una fila por pregunta respondida.
+- `Calculos_Evaluacion_2`: una fila por cada paso de los cuatro ejercicios guiados.
 
 Cada intento utiliza un identificador único. Si Streamlit repite el envío por una recarga, Apps Script reconoce el identificador y no duplica las filas.
 
@@ -52,12 +53,14 @@ RESULTS_WEBHOOK_URL = "URL_DE_LA_IMPLEMENTACION_DE_APPS_SCRIPT"
 ## Prueba obligatoria antes de compartirla
 
 1. Ingresar un nombre y DNI de prueba.
-2. Responder las 30 preguntas.
-3. Verificar la corrección y la retroalimentación de cada pregunta.
-4. Confirmar el resultado total y por unidad.
-5. Revisar que aparezca una fila en `Resumen_Evaluacion_2`.
-6. Revisar que aparezcan 30 filas en `Respuestas_Evaluacion_2`.
-7. Recargar la pantalla final y comprobar que no se dupliquen los registros.
+2. Completar los cuatro ejercicios guiados y comprobar ecuaciones, unidades y resultados.
+3. Responder las 30 preguntas.
+4. Verificar la corrección y la retroalimentación de cada pregunta.
+5. Confirmar el resultado total y por unidad.
+6. Revisar que aparezca una fila en `Resumen_Evaluacion_2`.
+7. Revisar que aparezcan 30 filas en `Respuestas_Evaluacion_2`.
+8. Revisar los pasos registrados en `Calculos_Evaluacion_2`.
+9. Recargar la pantalla final y comprobar que no se dupliquen los registros.
 
 ## Seguridad
 
