@@ -1,0 +1,317 @@
+[
+  {
+    "unit": "Unidad 6 – Física de las radiaciones",
+    "questions": [
+      {
+        "id": "u6q01",
+        "q": "Un electrón recibe energía y pasa a un nivel energético superior, pero permanece ligado al átomo. ¿Qué proceso ocurrió?",
+        "opts": [
+          "Ionización",
+          "Excitación",
+          "Aniquilación",
+          "Producción de pares"
+        ]
+      },
+      {
+        "id": "u6q02",
+        "q": "¿Cuál de las siguientes radiaciones se considera indirectamente ionizante?",
+        "opts": [
+          "Electrones",
+          "Protones",
+          "Fotones gamma",
+          "Partículas alfa"
+        ]
+      },
+      {
+        "id": "u6q03",
+        "q": "¿Qué representa la dosis absorbida?",
+        "opts": [
+          "El número de partículas emitidas por una fuente",
+          "La energía depositada por la radiación por unidad de masa",
+          "La energía de ligadura de los electrones",
+          "La cantidad de fotones por unidad de tiempo"
+        ]
+      },
+      {
+        "id": "u6q04",
+        "q": "En el laboratorio virtual se mantiene la misma fuente puntual y se duplica la distancia entre la fuente y el punto de medición. ¿Qué sucede aproximadamente con la tasa de exposición?",
+        "opts": [
+          "Se duplica",
+          "Se reduce a la mitad",
+          "Se reduce a la cuarta parte",
+          "No cambia"
+        ]
+      },
+      {
+        "id": "u6q05",
+        "q": "Una persona permanece 10 horas en un lugar donde la tasa de exposición se mantiene constante en 8 mR/h. ¿Cuál es la exposición acumulada?",
+        "opts": [
+          "0,8 mR",
+          "18 mR",
+          "80 mR",
+          "800 mR"
+        ]
+      },
+      {
+        "id": "u6q06",
+        "q": "En la estación de atenuación del laboratorio se aumenta progresivamente el espesor de un mismo material. ¿Qué comportamiento se espera para el número de fotones transmitidos?",
+        "opts": [
+          "Aumenta linealmente",
+          "Disminuye exponencialmente",
+          "Permanece constante",
+          "Primero aumenta y luego se mantiene"
+        ]
+      },
+      {
+        "id": "u6q07",
+        "q": "¿De qué factores depende principalmente el coeficiente de atenuación lineal de un material para fotones?",
+        "opts": [
+          "Solo del espesor del material",
+          "Del número atómico y de la energía de los fotones",
+          "Solo de la actividad de la fuente",
+          "Del tiempo de medición y la distancia"
+        ]
+      },
+      {
+        "id": "u6q08",
+        "q": "En un haz monoenergético, ¿cómo se relacionan la fluencia de energía y la fluencia de partículas?",
+        "opts": [
+          "La fluencia de energía es la fluencia de partículas multiplicada por la energía de cada partícula",
+          "Son siempre numéricamente iguales",
+          "La fluencia de energía depende solo del tiempo",
+          "La fluencia de partículas es la dosis dividida por la masa"
+        ]
+      },
+      {
+        "id": "u6q09",
+        "q": "¿Cuál es la diferencia conceptual más adecuada entre kerma y dosis absorbida?",
+        "opts": [
+          "El kerma corresponde a energía transferida a partículas cargadas y la dosis a energía finalmente depositada en el medio",
+          "El kerma se aplica solo a partículas alfa",
+          "La dosis se mide en sievert y el kerma en becquerel",
+          "No existe ninguna diferencia entre ambas magnitudes"
+        ]
+      },
+      {
+        "id": "u6q10",
+        "q": "En el simulador se mantiene constante la tasa de dosis y se duplica el tiempo de permanencia. ¿Qué ocurre con la dosis acumulada?",
+        "opts": [
+          "Se reduce a la mitad",
+          "Se duplica",
+          "Se cuadruplica",
+          "No cambia"
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "Unidad 7 – Fundamentos de detección e interacción de la radiación",
+    "questions": [
+      {
+        "id": "u7q01",
+        "q": "En el laboratorio “¿Qué detector elegirías?”, antes de seleccionar un equipo se debe definir qué información se necesita obtener. ¿Cuál es el criterio más importante?",
+        "opts": [
+          "El color y el tamaño del equipo",
+          "Si se necesita detectar presencia, contar eventos, medir energía, dosis o formar una imagen",
+          "La marca del fabricante",
+          "Que todos los detectores funcionen en modo corriente"
+        ]
+      },
+      {
+        "id": "u7q02",
+        "q": "¿Qué detector se utiliza habitualmente en un activímetro para medir la actividad de un radiofármaco contenido en una jeringa o vial?",
+        "opts": [
+          "Cámara de ionización tipo pozo",
+          "Contador Geiger-Müller",
+          "Película radiográfica",
+          "Detector termoluminiscente"
+        ]
+      },
+      {
+        "id": "u7q03",
+        "q": "En la curva de respuesta de un detector gaseoso, ¿en qué región se recolectan principalmente los iones primarios sin multiplicación gaseosa?",
+        "opts": [
+          "Región de recombinación",
+          "Región de cámara de ionización",
+          "Región proporcional",
+          "Región Geiger-Müller"
+        ]
+      },
+      {
+        "id": "u7q04",
+        "q": "¿Por qué un contador proporcional puede utilizarse para espectrometría?",
+        "opts": [
+          "Porque todos sus pulsos tienen la misma amplitud",
+          "Porque la amplitud del pulso conserva relación con la energía depositada",
+          "Porque no necesita polarización",
+          "Porque funciona únicamente en modo corriente"
+        ]
+      },
+      {
+        "id": "u7q05",
+        "q": "¿Por qué un contador Geiger-Müller convencional no permite identificar la energía del fotón detectado?",
+        "opts": [
+          "Porque no produce señal eléctrica",
+          "Porque cada evento genera una avalancha de amplitud aproximadamente independiente de la energía inicial",
+          "Porque absorbe todos los fotones",
+          "Porque solo detecta neutrones"
+        ]
+      },
+      {
+        "id": "u7q06",
+        "q": "En un detector de centelleo, ¿qué función cumple el tubo fotomultiplicador?",
+        "opts": [
+          "Convierte la luz del centellador en una señal eléctrica y la amplifica",
+          "Produce el radionucleido",
+          "Atenúa los fotones antes de que lleguen al cristal",
+          "Mide directamente la actividad sin utilizar el cristal"
+        ]
+      },
+      {
+        "id": "u7q07",
+        "q": "Si la prioridad es separar dos picos gamma de energías muy cercanas, ¿qué propiedad debe priorizarse al elegir el detector?",
+        "opts": [
+          "Mayor tiempo muerto",
+          "Mejor resolución energética",
+          "Menor sensibilidad",
+          "Funcionamiento exclusivamente en modo corriente"
+        ]
+      },
+      {
+        "id": "u7q08",
+        "q": "Dos detectores miden el mismo fotopico. El detector A presenta un FWHM menor que el detector B. ¿Cuál tiene mejor resolución energética?",
+        "opts": [
+          "El detector A",
+          "El detector B",
+          "Ambos tienen necesariamente la misma resolución",
+          "No puede evaluarse con el ancho del pico"
+        ]
+      },
+      {
+        "id": "u7q09",
+        "q": "En la simulación del espectro se aumenta el tamaño del detector. ¿Por qué puede aumentar la fracción de eventos registrados en el fotopico de energía completa?",
+        "opts": [
+          "Porque aumenta la probabilidad de que la radiación dispersada vuelva a interactuar y deposite toda su energía",
+          "Porque desaparece el efecto fotoeléctrico",
+          "Porque todos los eventos se transforman en ruido",
+          "Porque disminuye artificialmente la energía del fotón"
+        ]
+      },
+      {
+        "id": "u7q10",
+        "q": "En la cadena de espectrometría detector → preamplificador → ADC → MCA, ¿qué tarea realiza el ADC?",
+        "opts": [
+          "Convierte la amplitud analógica del pulso en un valor digital",
+          "Produce luz visible",
+          "Genera la alta tensión del detector",
+          "Clasifica directamente al trabajador según su dosis"
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "Unidad 8 – Dosimetría personal",
+    "questions": [
+      {
+        "id": "u8q01",
+        "q": "¿Cuál es el objetivo principal de la dosimetría personal ocupacional?",
+        "opts": [
+          "Medir la actividad del radiofármaco antes de administrarlo",
+          "Estimar y registrar la exposición individual de cada trabajador",
+          "Reemplazar todos los monitores ambientales",
+          "Identificar radionucleidos mediante espectrometría"
+        ]
+      },
+      {
+        "id": "u8q02",
+        "q": "¿Cuál de las siguientes opciones corresponde a vigilancia de exposición interna?",
+        "opts": [
+          "Dosímetro colocado en el tórax",
+          "Monitor ambiental de tasa de dosis",
+          "Contador de radiactividad corporal o análisis de excretas",
+          "Película utilizada para radiografía diagnóstica"
+        ]
+      },
+      {
+        "id": "u8q03",
+        "q": "¿Cómo se obtiene la información dosimétrica de una película fotográfica personal?",
+        "opts": [
+          "Midiendo su temperatura",
+          "Revelándola y relacionando su densidad óptica con una curva de dosis",
+          "Estimulándola únicamente con radiofrecuencia",
+          "Contando directamente fotones en tiempo real"
+        ]
+      },
+      {
+        "id": "u8q04",
+        "q": "¿Qué ocurre en un dosímetro termoluminiscente cuando recibe radiación?",
+        "opts": [
+          "Se genera una alarma sonora inmediata",
+          "Electrones quedan atrapados en niveles metaestables del material",
+          "La película se ennegrece",
+          "El material pierde toda la información instantáneamente"
+        ]
+      },
+      {
+        "id": "u8q05",
+        "q": "¿Cómo se lee posteriormente un dosímetro TLD?",
+        "opts": [
+          "Se calienta el material y se mide la luz emitida",
+          "Se mide solamente su masa",
+          "Se lo coloca en una cámara de ionización",
+          "Se observa a simple vista"
+        ]
+      },
+      {
+        "id": "u8q06",
+        "q": "En dosimetría termoluminiscente, ¿qué significa fading o desvanecimiento?",
+        "opts": [
+          "La pérdida no intencional de parte de la señal almacenada antes de la lectura",
+          "El aumento ilimitado de la sensibilidad",
+          "La emisión de una alarma audible",
+          "La conversión de dosis en actividad"
+        ]
+      },
+      {
+        "id": "u8q07",
+        "q": "¿Qué mecanismo se utiliza para leer un dosímetro OSL?",
+        "opts": [
+          "Estimulación óptica del material y medición de la luminiscencia",
+          "Revelado químico de una película",
+          "Fusión completa del detector",
+          "Conteo Geiger-Müller sin calibración"
+        ]
+      },
+      {
+        "id": "u8q08",
+        "q": "Un trabajador ingresa a una zona donde el nivel de radiación puede cambiar rápidamente. ¿Qué equipo complementario es especialmente recomendable?",
+        "opts": [
+          "Un dosímetro de lectura directa con alarma",
+          "Una película guardada fuera de la zona",
+          "Un densitómetro",
+          "Un activímetro"
+        ]
+      },
+      {
+        "id": "u8q09",
+        "q": "Durante una práctica, dos trabajadores olvidan uno de sus dosímetros y deciden compartir el disponible. ¿Cuál es la conducta correcta?",
+        "opts": [
+          "Compartirlo y dividir posteriormente la dosis por dos",
+          "Utilizarlo por turnos",
+          "No compartirlo: cada dosímetro es individual y debe corresponder a una sola persona",
+          "Colocarlo en una mesa entre ambos"
+        ]
+      },
+      {
+        "id": "u8q10",
+        "q": "En una tarea con fuentes radiactivas donde las manos pueden ser la región más expuesta, ¿qué dosimetría es la más apropiada como complemento?",
+        "opts": [
+          "Dosímetro de extremidad tipo anillo o muñeca",
+          "Dosímetro ambiental colocado en el pasillo",
+          "Película radiográfica diagnóstica",
+          "Activímetro colocado sobre el tórax"
+        ]
+      }
+    ]
+  }
+]
