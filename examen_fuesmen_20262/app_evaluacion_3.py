@@ -90,7 +90,7 @@ def guardar():
     else:
         st.session_state.error = error
 
-defaults = dict(iniciado=False, pos=0, answers={}, correcciones={}, nombre='', dni='', intento_id='', terminado=False, resumen=None, error='')
+defaults = dict(iniciado=False, pos=0, answers={}, correcciones={}, respuestas_correctas={}, nombre='', dni='', intento_id='', terminado=False, resumen=None, error='')
 for k,v in defaults.items():
     if k not in st.session_state:
         st.session_state[k] = v
@@ -137,17 +137,20 @@ elif not st.session_state.terminado:
                                   'catalogo_hash':CATALOG_HASH, 'id_pregunta':q['id'], 'seleccion':seleccion})
             if not data:
                 st.error(error)
-            elif type(data.get('correcta')) is not bool:
+            elif type(data.get('correcta')) is not bool or type(data.get('indice_correcto')) is not int or not 0 <= data['indice_correcto'] < len(q['opts']):
                 st.error('El registro devolvió una comprobación incompatible.')
             else:
                 st.session_state.answers[q['id']] = seleccion
                 st.session_state.correcciones[q['id']] = data['correcta']
+                st.session_state.respuestas_correctas[q['id']] = data['indice_correcto']
                 st.rerun()
     if q['id'] in st.session_state.answers:
         if st.session_state.correcciones.get(q['id']) is True:
             st.success('✅ ¡Correcto!')
         elif st.session_state.correcciones.get(q['id']) is False:
             st.error('❌ Incorrecto.')
+            if q['id'] in st.session_state.respuestas_correctas:
+                st.markdown('**Respuesta correcta:** ' + q['opts'][st.session_state.respuestas_correctas[q['id']]])
         else:
             st.info('Respuesta guardada en una versión anterior de esta sesión.')
     left, right = st.columns(2)
