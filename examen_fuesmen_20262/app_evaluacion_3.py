@@ -50,7 +50,7 @@ def verificar():
     data, error = enviar({'accion':'verificar_esquema', 'evaluacion_id':EVALUACION_ID, 'schema':SCHEMA, 'catalogo_hash':CATALOG_HASH})
     if not data:
         return False, error
-    if data.get('schema') != SCHEMA or data.get('evaluacion_id') != EVALUACION_ID or data.get('catalogo_hash') != CATALOG_HASH or data.get('total_preguntas') != 60:
+    if data.get('schema') != SCHEMA or data.get('evaluacion_id') != EVALUACION_ID or data.get('catalogo_hash') != CATALOG_HASH or data.get('total_preguntas') != 60 or data.get('correccion_inmediata') is not True:
         return False, 'El registro no es compatible con este examen. El docente debe revisar su configuración.'
     return True, ''
 
@@ -90,7 +90,7 @@ def guardar():
     else:
         st.session_state.error = error
 
-defaults = dict(iniciado=False, pos=0, answers={}, nombre='', dni='', intento_id='', terminado=False, resumen=None, error='')
+defaults = dict(iniciado=False, pos=0, answers={}, correcciones={}, nombre='', dni='', intento_id='', terminado=False, resumen=None, error='')
 for k,v in defaults.items():
     if k not in st.session_state:
         st.session_state[k] = v
@@ -101,7 +101,7 @@ st.caption('Fundación Escuela de Medicina Nuclear — FUESMEN')
 
 if not st.session_state.iniciado:
     st.write('Unidades 9, 10 y 11. Son 60 preguntas: 20 por unidad. Cada respuesta correcta vale un punto. El resultado se expresa también sobre 100.')
-    st.write('Podés navegar y revisar tus respuestas antes de finalizar. La entrega queda cerrada al enviarla. Las soluciones no se muestran durante el examen.')
+    st.write('Elegí una opción y presioná Comprobar: verás inmediatamente si es correcta. Cada respuesta queda fijada al comprobarla. Podés volver a las preguntas anteriores para revisar tu resultado.')
     st.caption('Tu nombre, DNI y respuestas se registrarán para la evaluación del curso. Una recarga completa o cierre de sesión puede perder el avance antes de la entrega.')
     with st.form('identificacion'):
         nombre = st.text_input('Apellido y nombre', max_chars=150)
@@ -126,16 +126,30 @@ elif not st.session_state.terminado:
     if q.get('image'):
         st.image(str(BASE / q['image']), caption='Figura de la presentación de clase, adaptada por recorte.')
     with st.form('pregunta_' + q['id']):
-        selected = st.radio('Elegí una opción:', q['opts'], index=st.session_state.answers.get(q['id']))
-        submitted = st.form_submit_button('Guardar respuesta', type='primary')
+        selected = st.radio('Elegí una opción:', q['opts'], index=st.session_state.answers.get(q['id']), disabled=q['id'] in st.session_state.answers)
+        submitted = st.form_submit_button('Comprobar', type='primary', disabled=q['id'] in st.session_state.answers)
     if submitted:
         if selected is None:
             st.warning('Seleccioná una opción.')
         else:
-            st.session_state.answers[q['id']] = q['opts'].index(selected)
-            st.rerun()
+            seleccion = q['opts'].index(selected)
+            data, error = enviar({'accion':'comprobar', 'evaluacion_id':EVALUACION_ID, 'schema':SCHEMA,
+                                  'catalogo_hash':CATALOG_HASH, 'id_pregunta':q['id'], 'seleccion':seleccion})
+            if not data:
+                st.error(error)
+            elif type(data.get('correcta')) is not bool:
+                st.error('El registro devolvió una comprobación incompatible.')
+            else:
+                st.session_state.answers[q['id']] = seleccion
+                st.session_state.correcciones[q['id']] = data['correcta']
+                st.rerun()
     if q['id'] in st.session_state.answers:
-        st.success('Respuesta guardada para este intento.')
+        if st.session_state.correcciones.get(q['id']) is True:
+            st.success('✅ ¡Correcto!')
+        elif st.session_state.correcciones.get(q['id']) is False:
+            st.error('❌ Incorrecto.')
+        else:
+            st.info('Respuesta guardada en una versión anterior de esta sesión.')
     left, right = st.columns(2)
     if left.button('Anterior', disabled=st.session_state.pos == 0):
         st.session_state.pos -= 1
@@ -149,7 +163,7 @@ elif not st.session_state.terminado:
     if st.button('Ir'):
         st.session_state.pos = destination
         st.rerun()
-    st.caption('Guardá la opción seleccionada antes de navegar. Podés modificar respuestas hasta la entrega.')
+    st.caption('Comprobá tu respuesta antes de navegar. Se registra la primera opción comprobada.')
     if len(st.session_state.answers) == 60:
         confirm = st.checkbox('Revisé mis respuestas y deseo entregar el examen.')
         if st.button('Finalizar y registrar', type='primary', disabled=not confirm):
